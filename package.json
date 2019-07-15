@@ -1,0 +1,11 @@
+{
+  "name": "unit_and_integration_tests",
+  "version": "0.0.1",
+  "description": "Sample code which demonstrate how to write unit and integration test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sanjeev Yadav",
+  "license": "ISC"
+}
