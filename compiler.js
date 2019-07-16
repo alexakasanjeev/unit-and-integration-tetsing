@@ -339,8 +339,20 @@ function codeGenerator(node) {
  *   4. newAst => generator   => output
  */
 
+function compiler(input) {
+    let tokens = tokenizer(input);
+    let ast = parser(tokens);
+    let newAst = transformer(ast);
+    let output = codeGenerator(newAst);
+
+    // and simply return the output!
+    return output;
+}
+
 module.exports = {
     tokenizer,
     parser,
     transformer,
+    codeGenerator,
+    compiler,
 }

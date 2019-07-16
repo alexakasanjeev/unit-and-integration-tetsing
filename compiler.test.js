@@ -1,4 +1,4 @@
-const { tokenizer, parser } = require('./compiler');
+const { tokenizer, parser, compiler } = require('./compiler');
 
 test('tokenizer: convert input string into tokens', () => {
     // Setup - create objects, variables, and set conditions that your test depends on
@@ -70,4 +70,17 @@ test('parser: convert tokens into abstract syntax tree', () => {
 
     // Verify - check your expectations against the result of the exercise phase.
     expect(result).toEqual(expectedResult);
+});
+
+
+test('Compiler should turn `input` into `output`', () => {
+    // Setup - create objects, variables, and set conditions that your test depends on
+    const inputString = '(add 2 (subtract 4 3))';
+    const expectedResult = 'add(2, subtract(4, 3));';
+
+    // Exercise - execute the functionality you are testing
+    const result = compiler(inputString);
+
+    // Verify - check your expectations against the result of the exercise phase.
+    expect(result).toBe(expectedResult);
 });
